@@ -1,0 +1,103 @@
+<section class="home">
+    <div class="home-cont" >
+           <div class="heading1">
+               We make it Super Simple
+           </div> 
+
+           <div class="collect-Image">
+            <img class="col-img" src="assets\images\collect_img-video.png"  alt="video" style="width:75%;">
+           </div>
+    
+ 
+               
+              
+           
+    </div>
+    <div class="home-cont" >
+        <div class="d-flex flex-row">
+            <div class="cal-card">
+                <div class="cal-card-header">
+                    Eligibility Calculator
+                </div>
+                <div class="cal-card-body">
+                 <div>
+                     <label>Monthly Income</label>
+                     <div class="amount-value">
+                      <strong><span class="slideValue">&#8377;</span>{{ incomeSlideValue$ | async }}</strong>
+                     </div>
+                     <div>
+                      <mat-slider (change)="updateIncomeSliderValue($event)" (input)="updateIncomeSliderValue($event)"
+                    
+                      step="1" min="100000" max="300000" ></mat-slider>
+                     
+                     </div>
+                     <div class="d-flex flex-row rupeeval">
+                         <div>&#8377; 100000</div>
+                         <div class="mrl">&#8377; 300000</div>
+      
+                     </div>
+                     
+      
+                 </div>
+                 <div>
+                  <label>Monthly Expense</label>
+                  <div class="amount-value">
+                   <strong><span class="slideValue">&#8377;</span>{{ expenseSlideValue$ | async }}</strong>
+                  </div>
+                  <div>
+                   <mat-slider (change)="updateExpenseSliderValue($event)" (input)="updateExpenseSliderValue($event)"
+                 
+                   step="1" min="0" max="100000" ></mat-slider>
+                  
+                  </div>
+                  
+      
+              </div>
+              <div>
+                  <label>Repayment Tenure</label>
+                  <mat-form-field class="formwidth">
+                      <mat-select name="tenure" [formControl]="repayment" >
+                        <mat-option *ngFor="let item of tenures" value="{{ item.val}}">{{item.desp}}</mat-option>
+                       
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+              <div >
+                  <label>  Do you have any existing loans?</label>
+                 <span class="slideallign">
+                      <mat-slide-toggle></mat-slide-toggle>
+                  </span>
+              </div>
+              <div  class="mart16">
+                  <label>EMI of existing loans (optional)</label>
+                  <mat-form-field class="formwidth" appearance="legacy">
+                     
+                      <input matInput  [formControl]="emifield" >
+                    </mat-form-field>
+                    
+              </div>
+                </div>
+                  
+              </div>
+              <div class="loan-amount">
+                     <div class="lightLabel1">
+                         Loan Amount
+                     </div>
+                     <div class="lightLabel2">
+                        &#8377; 100000
+                     </div>
+
+                     <div class="lightLabel1">
+                        Your EMI will be
+                    </div>
+                    <div class="lightLabel2">
+                       &#8377; 15000
+                    </div>
+            </div>
+        </div>
+ 
+        
+  </div>
+</section>
+
+
